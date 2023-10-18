@@ -34,13 +34,14 @@ const whosOnline2 = (friends) => {
     offline: [],
     away: []
   }
-  for (let i in friends) {
-    if (friends[i].status === "online" && friends[i].lastActivity <= 10) {
-      output.online.push(friends[i].username);
-    } else if (friends[i].status === "online" && friends[i].lastActivity > 10) {
-      output.away.push(friends[i].username);
-    } else if (friends[i].status === "offline") {
-      output.offline.push(friends[i].username);
+  for (let friend of friends) {
+    const { status, lastActivity, username } = friend;
+    if (status === "online" && lastActivity <= 10) {
+      output.online.push(friend.username);
+    } else if (status === "online" && lastActivity > 10) {
+      output.away.push(username);
+    } else if (status === "offline") {
+      output.offline.push(username);
     }
   }
   return output;
