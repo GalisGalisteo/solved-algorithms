@@ -15,7 +15,6 @@ El array puede ser de números positivos o negativos, pero al menos, tendrá dos
  */
 function firstNonConsecutive(arr) {
   let result = null;
-
   let i = 1;
 
   while (i < arr.length - 1 && result === null) {
