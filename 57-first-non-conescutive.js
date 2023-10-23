@@ -32,6 +32,30 @@ function firstNonConsecutive(arr) {
   //   }
   // }
   // return result;
+
+  // let i = 1;
+  // let result = null;
+
+  // while (!result && i < arr.length) {
+  //   if (arr[i] - arr[i - 1] !== 1) {
+  //     result = arr[i]
+  //   }
+  //   i++;
+  // }
+  // return result;
+
+
+  // let i = 1;
+  // let result = null;
+
+  // while (i < arr.length) {
+  //   if (arr[i] - arr[i - 1] !== 1) {
+  //     result = arr[i]
+  //   }
+  //   i++;
+  // }
+  // return result;
+
 }
 
 console.log(firstNonConsecutive([1, 2, 3, 4, 6, 7, 8])); // 6
