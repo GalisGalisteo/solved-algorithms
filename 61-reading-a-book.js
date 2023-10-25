@@ -4,14 +4,32 @@
  *
  * https://www.codewars.com/kata/570ca6a520c69f39dd0016d4/
  *
- *
+ * John reading a book, When he met a word that he had never read, he will read the word spelling, each letter(not for punctuation,number, only letter) takes 1 second; If he have read the word, he will read the word, each word takes 1 second.
+ * 
+ * Give you a parameter words(Each word is separated by space)
+ * 
+ * Return a number that how many seconds John can finish reading.
  */
 
-function sc(words) {
-  return 0;
-}
 
-// Ambos console.log deben dar lo mismo
+function sc(words) {
+  const readWords = [];
+  let totalTime = 0;
+
+  const caractersToErase = /[^a-z\s]/gi;
+  const onlyLetters = words.replace(caractersToErase, '').toLowerCase();
+  const wordsFounded = onlyLetters.split(/\s+/);
+
+  for (word of wordsFounded) {
+    if (readWords.includes(word)) {
+      totalTime++;
+    } else {
+      totalTime += word.length;
+      readWords.push(word);
+    }
+  }
+  return totalTime;
+}
 
 console.log(sc("Hello World!"), 10);
 console.log(sc("black cat and white cat all are cat"), 24);
