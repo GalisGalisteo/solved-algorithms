@@ -20,7 +20,7 @@ function sc(words) {
   const onlyLetters = words.replace(caractersToErase, '').toLowerCase();
   const wordsFounded = onlyLetters.split(/\s+/);
 
-  for (word of wordsFounded) {
+  for (const word of wordsFounded) {
     if (readWords.includes(word)) {
       totalTime++;
     } else {
